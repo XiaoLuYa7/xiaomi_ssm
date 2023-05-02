@@ -1,0 +1,11 @@
+1)新建Maven工程
+2)修改目录，修改pom.xml文件
+3)添加ssm框架的所有依赖
+4)拷贝jdbc.properties到resource目录下
+5）新建applicationContext.xml进行配置spring的相关信息
+6)新建springmvc.xml文件，配置springmvc
+7)新建mybatis-config.xml，进行分页插件的配置
+8)使用逆向工程生成pojo和mapper文件
+9)开发业务逻辑层，实现登录判断
+10)完成登录处理
+11)改造页面，发送登录请求，验证登录

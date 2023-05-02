@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--
+        MyBatis核心配置文件中，标签的顺序：
+        properties?,settings?,typeAliases?,typeHandlers?,
+        objectFactory?,objectWrapperFactory?,reflectorFactory?,
+        plugins?,environments?,databaseIdProvider?,mappers?
+    -->
+
+    <!--引入properties文件，此后就可以在当前文件中使用mybatis-config.xml的方式访问value-->
+    <properties resource="jdbc.properties"/>
+
+    <settings>
+        <!--将下划线映射为驼峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--lazyLoadingEnabled：延迟加载的全局开关。当开启时，所有关联对象都会延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--aggressiveLazyLoading：当开启时，任何方法的调用都会加载该对象的所有属性(全加载)。否则，每个属性会按需加载-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <!--
+        typeAliases:设置类型别名，即为某一个具体的类型设置一个别名
+        在MyBatis的范围中，就可以使用别名表示某一个具体的类型
+
+        type:设置需要起别名的类型
+        alias：设置某个类型的别名
+    -->
+    
+    <!--配置分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+</configuration>
